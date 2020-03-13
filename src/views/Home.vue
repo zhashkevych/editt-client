@@ -1,5 +1,7 @@
 <template>
     <div>
+
+        <!-- BLOCK 1 -->
         
         <div class="block1">
             <div class="heading">
@@ -13,10 +15,12 @@
                 <PublicationsRow />
                 
                 <div class="create">
-                    <button class="create-publication-btn">Створити публікацію</button>
+                    <button class="btn">Створити публікацію</button>
                 </div>
             </div>
         </div>
+
+        <!-- BLOCK 2 -->
 
         <div class="block2">
             <div class="heading">
@@ -27,22 +31,55 @@
             <div class="row">
                 <div class="column for-readers">
                     <h1>Для читачів</h1>
-                    <ul class="benefits-list">
-                        <li>Актуальний контент</li>
-                        <li>Перегляд публікацій без надоїдливої реклами</li>
-                        <li>Можливість знаходити однодумців</li>
-                    </ul>
+
+                    <div class="benefits">
+                        <ul class="benefits-list">
+                            <li>Актуальний контент</li>
+                            <li>Перегляд публікацій без надоїдливої реклами</li>
+                            <li>Можливість знаходити однодумців</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="create">
+                        <button class="btn popular-btn">Популярне на editt.</button>
+                    </div>
                 </div>
                 <div class="column for-creators">
                     <h1>Для кріейторів</h1>
-                    <ul class="benefits-list">
-                        <li>Органічне просування публікацій</li>
-                        <li>Створення лояльної аудиторії та<br>розвиток особистого бренду <strong><i>(Coming Soon)</i></strong></li>
-                        <li>Можливості для монетизації власної творчості <strong><i>(Coming Soon)</i></strong></li>
-                    </ul>
+
+                    <div class="benefits">
+                        <ul class="benefits-list">
+                            <li>Органічне просування публікацій</li>
+                            <li>Створення лояльної аудиторії та<br>розвиток особистого бренду <strong><i>(Coming Soon)</i></strong></li>
+                            <li>Можливості для монетизації власної творчості <strong><i>(Coming Soon)</i></strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="create">
+                        <button class="btn">Створити публікацію</button>
+                    </div>  
                 </div>
             </div>
         </div>    
+
+        <!-- BLOCK 3 -->
+
+        <div class="block1">
+            <div class="heading">
+                <h1>Платформа твого розвитку.</h1>
+                <h4>Знаходь цікавий контент. Поширюй важливі думки.</h4>
+            </div>
+
+            <div class="popular">
+                <h2>Популярне:</h2>
+                
+                <PublicationsRow />
+                
+                <div class="create">
+                    <button class="btn">Створити публікацію</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -87,7 +124,7 @@ export default {
         margin: 2rem 0rem;
     }
 
-    .create-publication-btn {
+    .btn {
         font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
         border: none;
         display: block;
@@ -104,6 +141,10 @@ export default {
         margin: 0 auto;
     }
 
+    .popular-btn {
+        background-color: #9B9B9B;
+    }
+
     /* Block 2 */
     .block2 {
         margin: 5rem 0;
@@ -115,7 +156,6 @@ export default {
 
     .row {
         margin: auto;
-        padding-top: 2rem;
     }
 
     .column {
@@ -138,6 +178,10 @@ export default {
     }
 
     /* List */
+    .benefits{
+        min-height: 12rem;
+    }
+
     .benefits-list {
         text-align: left;
         list-style:none;
@@ -152,6 +196,5 @@ export default {
         background-position: left center;
         background-size: 20px;
     }
-
 
 </style>
