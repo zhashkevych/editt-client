@@ -3,6 +3,9 @@
         <Publication class="column"></Publication>
         <Publication class="column"></Publication>
         <Publication class="column"></Publication>
+        <div class="see-more">
+            <p>Більше &rarr;</p>
+        </div>
     </div>
 </template>
 
@@ -32,5 +35,10 @@ export default {
   content: "";
   display: table;
   clear: both;
+}
+
+.see-more {
+    text-align: right;
+
 }
 </style>

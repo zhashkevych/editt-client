@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <!-- BLOCK 1 -->
         
         <div class="block1">
@@ -22,7 +21,7 @@
 
         <!-- BLOCK 2 -->
 
-        <div class="block2">
+        <div class="block2 margin-bottom">
             <div class="heading">
                 <h1>Насолоджуйся якісним контентом.<br>Без реклами.</h1>
                 <h4>Ми не Facebook, щоб продавати твої данні рекламодавцям.<br>Ми цінуємо твою конфіденційність.</h4>
@@ -64,14 +63,14 @@
 
         <!-- BLOCK 3 -->
 
-        <div class="block1">
+        <div class="block3 margin-bottom">
             <div class="heading">
-                <h1>Платформа твого розвитку.</h1>
-                <h4>Знаходь цікавий контент. Поширюй важливі думки.</h4>
+                <h1>Ділись думками за лічені секунди.</h1>
+                <h4>Від натхення до публікації один editt.</h4>
             </div>
 
             <div class="popular">
-                <h2>Популярне:</h2>
+                <h2>Останні публікації:</h2>
                 
                 <PublicationsRow />
                 
@@ -146,7 +145,7 @@ export default {
     }
 
     /* Block 2 */
-    .block2 {
+    .margin-bottom {
         margin: 5rem 0;
     }
 
