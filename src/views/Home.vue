@@ -13,10 +13,13 @@
                 
                 <PublicationsRow 
                     v-bind:publications="popularPublications"
+                    v-bind:rowType="typePopular"
                 />
                 
                 <div class="create">
-                    <button class="btn">Створити публікацію</button>
+                    <router-link :to="'create'" class="btn-link">
+                        <button class="btn">Створити публікацію</button>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -42,7 +45,9 @@
                     </div>
                     
                     <div class="create">
-                        <button class="btn popular-btn">Популярне на editt.</button>
+                        <router-link :to="{name: 'feed', params: {type: 'popular'} }" class="btn-link">
+                             <button class="btn popular-btn">Популярне на editt.</button>
+                        </router-link>
                     </div>
                 </div>
                 <div class="column for-creators">
@@ -71,15 +76,18 @@
                 <h4>Від натхення до публікації один editt.</h4>
             </div>
 
-            <div class="popular">
+            <div class="latest">
                 <h2>Останні публікації:</h2>
                 
                 <PublicationsRow 
                      v-bind:publications="latestPublications"
+                     v-bind:rowType="typeLatest"
                 />
                 
                 <div class="create">
-                    <button class="btn">Створити публікацію</button>
+                    <router-link :to="'create'" class="btn-link">
+                        <button class="btn">Створити публікацію</button>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -99,16 +107,18 @@ export default {
         return {
             popularPublications: [],
             latestPublications: [],
+            typePopular: 'popular',
+            typeLatest: 'latest',
         }
     },
     mounted() {
         // fetch popular publications
-        fetch('http://localhost:8000/api/publications?type=popular')
+        fetch('http://localhost:8000/api/publications?type=popular&limit=3')
         .then(response => response.json())
         .then(json => this.popularPublications = json.publications)
 
         // fetch latest publications
-        fetch('http://localhost:8000/api/publications?type=popular')
+        fetch('http://localhost:8000/api/publications?type=latest&limit=3')
         .then(response => response.json())
         .then(json => this.latestPublications = json.publications)
     },
@@ -128,6 +138,11 @@ export default {
     }
 
     .popular {
+        text-align: left;
+        padding: 1em 10em;
+    }
+
+    .latest {
         text-align: left;
         padding: 1em 10em;
     }
@@ -163,6 +178,11 @@ export default {
 
     .popular-btn {
         background-color: #9B9B9B;
+    }
+
+    .btn-link {
+        text-decoration: none;
+        color: #fff;
     }
 
     /* Block 2 */

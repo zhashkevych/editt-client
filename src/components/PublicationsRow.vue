@@ -7,11 +7,15 @@
             v-bind:index="index"
             v-bind:key="publication.id"
         />
-        <!-- <Publication class="column"></Publication> -->
-        <!-- <Publication class="column"></Publication> -->
+
         <div class="see-more">
-            <p>Більше &rarr;</p>
+            <router-link
+                :to="{name: 'feed', params: {type: rowType} }"
+                class="see-more-link">
+                <p>Більше &rarr;</p>
+            </router-link>
         </div>
+        
     </div>
 </template>
 
@@ -20,7 +24,7 @@ import Publication from '@/components/Publication'
 
 export default {
     name: 'publication-row',
-    props: ['publications'],
+    props: ['publications', 'rowType'],
     components: {
         Publication
     }    
@@ -50,5 +54,10 @@ export default {
 
 .see-more p {
     margin: 0;
+}
+
+.see-more-link {
+    text-decoration: none;
+    color: #2e2e2e;
 }
 </style>

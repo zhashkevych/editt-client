@@ -17,5 +17,16 @@ export default new Router({
       component: () => import("@/views/Publication"),
       props: true
     },
+    {
+      name: 'feed',
+      path: '/feed/:type',
+      component: () => import("@/views/Feed"),
+      props: true
+    },
+    {
+      name: 'createPublication',
+      path: '/create',
+      component: () => import("@/views/CreatePublication")
+    }
   ]
 });
