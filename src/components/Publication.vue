@@ -2,24 +2,43 @@
     <div class="publication">
         <a href="" class="image">
             <div class="croped-image"
-                style='background-image: url("https://miro.medium.com/max/4700/0*2gNPh0hZt_POaNlN");'>
-            </div>
+                v-bind:style="{backgroundImage: 'url(' + publication.imageLink + ')'}"
+            />
         </a>
         
-        <div class="heading">
-            <p class="hashtags">#мінімалізм #лайфстайл #таймменеджмент</p>
-            <h2 class="heading">Путь к Простоте</h2>
-        </div>
+        <a href="" class="title-link">
+            <div class="heading">
+                <p class="hashtags">
+                    <span
+                        v-for="tag in publication.tags"
+                        v-bind:key="tag"
+                    >#{{tag}} </span>
+                </p>
+                <h2 class="heading">{{publication.title}}</h2>
+            </div>
+        </a>
     
         <div class="bottom">
             <div class="left">
-                <p class="author">Від Василь Пупкін</p>
-                <p class="reading-time">Час читання: 4хв</p>
+                <p class="author">Від {{publication.author}}</p>
+                <p class="reading-time">Час читання: {{publication.readingTime}} хв</p>
             </div>
         </div>
        
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+    publication: {
+        type: Object,
+        required: true
+    },
+    index: Number
+  },
+}
+</script>
 
 <style scoped>
     .publication {
@@ -43,6 +62,11 @@
     
     .hashtags {
         font-size: 12px;
+    }
+
+    .title-link {
+        text-decoration: none;
+        color: #2e2e2e;
     }
 
     .bottom {

@@ -8,23 +8,12 @@ export default new Router({
     {
       path: "/",
       component: () => import("@/views/Home"),
-    //   children: [
-    //     {
-    //       path: "",
-    //       name: "home",
-    //       component: () => import("@/views/HomeGlobal")
-    //     },
-    //     {
-    //       path: "popular",
-    //       name: "home-popular-publications",
-    //       component: () => import("@/views/HomeMyFeed")
-    //     },
-    //     {
-    //       path: "latest",
-    //       name: "home-latest-publications",
-    //       component: () => import("@/views/HomeTag")
-    //     }
-    //   ]
-    }
+    },
+    {
+      name: "publication",
+      path: "/publications/:id",
+      component: () => import("@/views/Publication"),
+      props: true
+    },
   ]
 });

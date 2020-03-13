@@ -11,7 +11,9 @@
             <div class="popular">
                 <h2>Популярне:</h2>
                 
-                <PublicationsRow />
+                <PublicationsRow 
+                    v-bind:publications="popularPublications"
+                />
                 
                 <div class="create">
                     <button class="btn">Створити публікацію</button>
@@ -72,7 +74,9 @@
             <div class="popular">
                 <h2>Останні публікації:</h2>
                 
-                <PublicationsRow />
+                <PublicationsRow 
+                     v-bind:publications="latestPublications"
+                />
                 
                 <div class="create">
                     <button class="btn">Створити публікацію</button>
@@ -90,7 +94,24 @@ export default {
     name: 'home',
     components: {
         PublicationsRow
-    }
+    },
+    data() {
+        return {
+            popularPublications: [],
+            latestPublications: [],
+        }
+    },
+    mounted() {
+        // fetch popular publications
+        fetch('http://localhost:8000/api/publications?type=popular')
+        .then(response => response.json())
+        .then(json => this.popularPublications = json.publications)
+
+        // fetch latest publications
+        fetch('http://localhost:8000/api/publications?type=popular')
+        .then(response => response.json())
+        .then(json => this.latestPublications = json.publications)
+    },
 }
 </script>
 

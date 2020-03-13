@@ -1,8 +1,14 @@
 <template>
     <div class="row">
-        <Publication class="column"></Publication>
-        <Publication class="column"></Publication>
-        <Publication class="column"></Publication>
+
+        <Publication class="column"
+            v-for="(publication, index) in publications"
+            v-bind:publication="publication"
+            v-bind:index="index"
+            v-bind:key="publication.id"
+        />
+        <!-- <Publication class="column"></Publication> -->
+        <!-- <Publication class="column"></Publication> -->
         <div class="see-more">
             <p>Більше &rarr;</p>
         </div>
@@ -14,6 +20,7 @@ import Publication from '@/components/Publication'
 
 export default {
     name: 'publication-row',
+    props: ['publications'],
     components: {
         Publication
     }    
@@ -39,6 +46,9 @@ export default {
 
 .see-more {
     text-align: right;
+}
 
+.see-more p {
+    margin: 0;
 }
 </style>
