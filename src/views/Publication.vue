@@ -1,11 +1,14 @@
 <template>
     <div class="publication">
-        <p class="hashtags"><span
+        <p class="hashtags">
+        <span
             v-for="tag in publication.tags"
             v-bind:key="tag"
-        >#{{tag}} </span></p>
+        >#{{tag}} </span>
+        </p>
+
         <h1 class="title">{{publication.title}}</h1>
-        <p class="article-info">Від {{publication.author}} | Час читання: {{publication.readingTime}} хв</p>
+        <p class="article-info">Від {{publication.author}} | Опубліковано: {{publication.publishedAt | formatDate}} | Час читання: {{publication.readingTime}} хв</p>
 
         <img :src="publication.imageLink" class="article-image" alt="">
 
@@ -42,7 +45,7 @@ export default {
 
 .article-info {
     color: #9B9B9B;
-    margin: 0;
+    margin: 0 0 1rem 0;
 }
 
 .article-image {

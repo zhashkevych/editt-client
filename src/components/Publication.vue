@@ -21,7 +21,7 @@
         <div class="bottom">
             <div class="left">
                 <p class="author">Від {{publication.author}}</p>
-                <p class="reading-time">Час читання: {{publication.readingTime}} хв</p>
+                <p class="reading-time">{{publication.publishedAt | formatDate}} | Час читання: {{publication.readingTime}} хв</p>
             </div>
         </div>
        
