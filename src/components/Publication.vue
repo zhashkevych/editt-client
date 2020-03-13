@@ -62,6 +62,7 @@ export default {
     
     .hashtags {
         font-size: 12px;
+        margin: 1rem 0 0 0;
     }
 
     .title-link {
