@@ -35,9 +35,6 @@ export default {
 
     .popular {
         text-align: left;
-    }
-
-     .popular h2 {
         padding: 1em 10em;
     }
 

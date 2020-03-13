@@ -20,7 +20,6 @@ export default {
 <style>
 .row {
     margin: auto;
-    width: 75%;
 }
 
 .column {

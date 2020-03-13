@@ -1,8 +1,10 @@
 <template>
     <div class="publication">
-        <div class="croped-image">
-            <img src="https://miro.medium.com/max/4700/0*2gNPh0hZt_POaNlN" alt="">
-        </div>
+        <a href="" class="image">
+            <div class="croped-image"
+                style='background-image: url("https://miro.medium.com/max/4700/0*2gNPh0hZt_POaNlN");'>
+            </div>
+        </a>
         
         <div class="heading">
             <p class="hashtags">#мінімалізм #лайфстайл #таймменеджмент</p>
@@ -26,12 +28,11 @@
 
     .croped-image {
         width: 95%;
-        height: 10rem;
+        height: 160px;
         overflow: hidden;
-    }
-    .publication img {
-       width: 340px;
-       height: 160px;
+        background-position: 50% 50% !important;
+        background-origin: border-box!important;
+        background-size: cover!important;
     }
 
     .heading {
