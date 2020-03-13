@@ -1,12 +1,11 @@
 <template>
     <div class="publication">
-        <a href="" class="image">
+        
+        <router-link :to="{ name: 'publications', params: {id: publication.id } }" class="title-link">
+           
             <div class="croped-image"
                 v-bind:style="{backgroundImage: 'url(' + publication.imageLink + ')'}"
             />
-        </a>
-        
-        <a href="" class="title-link">
             <div class="heading">
                 <p class="hashtags">
                     <span
@@ -16,7 +15,8 @@
                 </p>
                 <h2 class="heading">{{publication.title}}</h2>
             </div>
-        </a>
+
+        </router-link>
     
         <div class="bottom">
             <div class="left">
