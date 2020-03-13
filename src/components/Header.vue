@@ -7,7 +7,6 @@
 <style>
     .header {
         overflow: hidden;
-        padding: 20px 10px;
         text-align: left;
     }
 
