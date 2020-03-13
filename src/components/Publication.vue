@@ -37,7 +37,7 @@
 
     .heading {
         font-size: 24px;
-        margin-bottom: 8rem;
+        margin-bottom: 6rem;
         margin-top: 0;
     }
     
