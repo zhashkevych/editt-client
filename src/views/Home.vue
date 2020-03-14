@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- BLOCK 1 -->
-        
+
         <div class="block1">
             <div class="heading">
                 <h1>Платформа твого розвитку.</h1>
@@ -10,12 +10,12 @@
 
             <div class="popular">
                 <h2>Популярне:</h2>
-                
-                <PublicationsRow 
+
+                <PublicationsRow
                     v-bind:publications="popularPublications"
                     v-bind:rowType="typePopular"
                 />
-                
+
                 <div class="create">
                     <router-link :to="'create'" class="btn-link">
                         <button class="btn">Створити публікацію</button>
@@ -29,7 +29,7 @@
         <div class="block2 margin-bottom">
             <div class="heading">
                 <h1>Насолоджуйся якісним контентом.<br>Без реклами.</h1>
-                <h4>Ми не Facebook, щоб продавати твої данні рекламодавцям.<br>Ми цінуємо твою конфіденційність.</h4>
+                <h4>Ми не Facebook, щоб продавати твої дані рекламодавцям.<br>Ми цінуємо твою конфіденційність.</h4>
             </div>
 
             <div class="row">
@@ -43,7 +43,7 @@
                             <li>Можливість знаходити однодумців</li>
                         </ul>
                     </div>
-                    
+
                     <div class="create">
                         <router-link :to="{name: 'feed', params: {type: 'popular'} }" class="btn-link">
                              <button class="btn popular-btn">Популярне на editt.</button>
@@ -63,10 +63,10 @@
 
                     <div class="create">
                         <button class="btn">Створити публікацію</button>
-                    </div>  
+                    </div>
                 </div>
             </div>
-        </div>    
+        </div>
 
         <!-- BLOCK 3 -->
 
@@ -78,12 +78,12 @@
 
             <div class="latest">
                 <h2>Останні публікації:</h2>
-                
-                <PublicationsRow 
+
+                <PublicationsRow
                      v-bind:publications="latestPublications"
                      v-bind:rowType="typeLatest"
                 />
-                
+
                 <div class="create">
                     <router-link :to="'create'" class="btn-link">
                         <button class="btn">Створити публікацію</button>
@@ -139,17 +139,36 @@ export default {
 
     .popular {
         text-align: left;
-        padding: 1em 10em;
     }
 
     .latest {
         text-align: left;
-        padding: 1em 10em;
     }
 
-     @media screen and (max-width: 500px) {
+    @media (max-width: 500px) {
+        .heading {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .heading h1 {
             font-size: 32px;
+        }
+
+        .heading h4 {
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .popular {
+            text-align: left;
+            padding: 1em 0;
+        }
+
+        .column.for-readers, .column.for-creators {
+            width: 100%;
+            border: none;
         }
     }
 

@@ -2,7 +2,7 @@
     <div class="header noselect">
         <h1 class="logo">
             <router-link to="/" class="link">editt.</router-link>
-        </h1>     
+        </h1>
     </div>
 </template>
 
@@ -21,7 +21,7 @@
         text-decoration: none;
         color: #2e2e2e;
     }
-    
+
     .header {
         overflow: hidden;
         text-align: left;
@@ -32,10 +32,10 @@
         font-weight: bold;
         padding-left: 2em;
     }
-
-    .logo {
-        max-width: 8rem;
-    }
+    /* Do we need this max-width? */
+    /*.logo {*/
+    /*    max-width: 8rem;*/
+    /*}*/
 
     @media screen and (max-width: 500px) {
         .header {
