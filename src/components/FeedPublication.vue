@@ -41,7 +41,6 @@ export default {
 
 <style scoped>
     .publication {
-        /* position: relative; */
         margin: 0 auto;
         margin-bottom: 3rem;
     }
@@ -95,5 +94,11 @@ export default {
         float: left;
         width: 50%;
         text-align: center;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 </style>
