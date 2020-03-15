@@ -55,7 +55,7 @@ export default {
     }
 
     .heading {
-        font-size: 24px;
+        font-size: 15px;
         margin-bottom: 6rem;
         margin-top: 0;
     }
