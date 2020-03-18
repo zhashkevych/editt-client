@@ -27,6 +27,11 @@ export default new Router({
       name: 'createPublication',
       path: '/create',
       component: () => import("@/views/CreatePublication")
+    },
+    {
+      name: 'notFound',
+      path: "*",
+      component: () => import("@/views/NotFound")
     }
   ]
 });

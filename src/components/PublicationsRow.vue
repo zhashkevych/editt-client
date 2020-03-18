@@ -42,6 +42,7 @@ export default {
 
 .column {
     margin: 0 0.5rem;
+    flex: 1 1 0px;
 }
 
 .see-more {
