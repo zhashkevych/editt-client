@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .feed {
     max-width: 60%;
     margin: 0 auto;
