@@ -32,10 +32,6 @@
         font-weight: bold;
         padding-left: 2em;
     }
-    /* Do we need this max-width? */
-    /*.logo {*/
-    /*    max-width: 8rem;*/
-    /*}*/
 
     @media screen and (max-width: 500px) {
         .header {
