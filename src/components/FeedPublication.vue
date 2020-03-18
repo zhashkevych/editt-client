@@ -1,9 +1,9 @@
 <template>
     <div class="publication row">
-        
+
         <router-link :to="{ name: 'publications', params: {id: publication.id } }" class="title-link">
-           
-            <div class="croped-image column"
+
+            <div class="cropped-image column"
                 v-bind:style="{backgroundImage: 'url(' + publication.imageLink + ')'}"
             />
 
@@ -45,7 +45,7 @@ export default {
         margin-bottom: 3rem;
     }
 
-    .croped-image {
+    .cropped-image {
         max-width: 50%;
         height: 160px;
         overflow: hidden;
@@ -60,10 +60,10 @@ export default {
         margin-left: 1rem;
         text-align: left;
     }
-    
+
     .hashtags {
         font-size: 12px;
-        margin: 1rem 0 0 0; 
+        margin: 1rem 0 0 0;
         text-align: left;
         margin-left: 1rem;
     }

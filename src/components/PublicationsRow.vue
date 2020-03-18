@@ -1,12 +1,15 @@
 <template>
-    <div class="row">
+    <div>
+        <div class="row">
 
-        <Publication class="column"
-            v-for="(publication, index) in publications"
-            v-bind:publication="publication"
-            v-bind:index="index"
-            v-bind:key="publication.id"
-        />
+            <Publication class="column"
+                v-for="(publication, index) in publications"
+                v-bind:publication="publication"
+                v-bind:index="index"
+                v-bind:key="publication.id"
+            />
+
+        </div>
 
         <div class="see-more">
             <router-link
@@ -15,8 +18,8 @@
                 <p>Більше &rarr;</p>
             </router-link>
         </div>
-        
     </div>
+
 </template>
 
 <script>
@@ -27,25 +30,18 @@ export default {
     props: ['publications', 'rowType'],
     components: {
         Publication
-    }    
+    }
 }
 </script>
 
 <style>
 .row {
     margin: auto;
+    display: flex;
 }
 
 .column {
-  float: left;
-  width: 33.33%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+    margin: 0 0.5rem;
 }
 
 .see-more {
@@ -60,4 +56,11 @@ export default {
     text-decoration: none;
     color: #2e2e2e;
 }
+
+    @media screen and (max-width: 500px) {
+        .row {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 </style>
