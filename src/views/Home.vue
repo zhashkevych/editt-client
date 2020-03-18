@@ -125,7 +125,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     /* Block 1 */
     .heading h1 {
         font-size: 32px;
