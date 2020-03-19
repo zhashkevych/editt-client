@@ -23,6 +23,7 @@
 
 <script>
     import Wrapper from "@/components/Wrapper"
+    import { api } from "@/utils/api"
 
     export default {
         data() {
@@ -35,12 +36,12 @@
         },
         mounted() {
             // fetch publication by id
-            fetch('http://localhost:8000/api/publications/' + this.$route.params.id)
+            api(`publications/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => this.publication = json);
 
             // and increase view count
-            fetch('http://localhost:8000/api/publications/' + this.$route.params.id + '/view', {
+            api(`publications/${this.$route.params.id}/view`, {
                 method: 'POST',
             }).then(console.log('view count increased'))
         }

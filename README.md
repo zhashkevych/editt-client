@@ -4,6 +4,7 @@
 ```
 npm install
 ```
+You need to create .env.development and/or .env.production for requests to work, check out .env.example
 
 ### Compiles and hot-reloads for development
 ```

@@ -100,6 +100,7 @@
 <script>
     import PublicationsRow from '@/components/PublicationsRow'
     import Wrapper from "@/components/Wrapper"
+    import { api } from "@/utils/api"
 
     export default {
         name: 'home',
@@ -117,12 +118,12 @@
         },
         mounted() {
             // fetch popular publications
-            fetch('http://localhost:8000/api/publications?type=popular&limit=3')
+            api('publications?type=popular&limit=3')
                 .then(response => response.json())
                 .then(json => this.popularPublications = json.publications)
 
             // fetch latest publications
-            fetch('http://localhost:8000/api/publications?type=latest&limit=3')
+            api('publications?type=latest&limit=3')
                 .then(response => response.json())
                 .then(json => this.latestPublications = json.publications)
         },

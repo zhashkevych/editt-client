@@ -16,6 +16,7 @@
 <script>
     import FeedPublication from '@/components/FeedPublication'
     import Wrapper from "@/components/Wrapper"
+    import { api } from "@/utils/api";
 
     export default {
         data() {
@@ -24,7 +25,7 @@
             }
         },
         created() {
-            fetch('http://localhost:8000/api/publications?type=' + this.$route.params.type)
+            api(`publications?type=${this.$route.params.type}`)
                 .then(response => response.json())
                 .then(json => this.publications = json.publications)
         },
