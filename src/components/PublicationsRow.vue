@@ -3,18 +3,18 @@
         <div class="row">
 
             <Publication class="column"
-                v-for="(publication, index) in publications"
-                v-bind:publication="publication"
-                v-bind:index="index"
-                v-bind:key="publication.id"
+                         v-for="(publication, index) in publications"
+                         :publication="publication"
+                         :index="index"
+                         :key="publication.id"
             />
 
         </div>
 
         <div class="see-more">
             <router-link
-                :to="{name: 'feed', params: {type: rowType} }"
-                class="see-more-link">
+                    :to="{name: 'feed', params: {type: rowType} }"
+                    class="see-more-link">
                 <p>Більше &rarr;</p>
             </router-link>
         </div>
@@ -23,45 +23,43 @@
 </template>
 
 <script>
-import Publication from '@/components/Publication'
+    import Publication from '@/components/Publication'
 
-export default {
-    name: 'publication-row',
-    props: ['publications', 'rowType'],
-    components: {
-        Publication
+    export default {
+        name: 'publication-row',
+        props: ['publications', 'rowType'],
+        components: {
+            Publication
+        }
     }
-}
 </script>
 
-<style>
-.row {
-    margin: auto;
-    display: flex;
-}
+<style lang="scss">
+    .row {
+        margin: auto;
+        display: flex;
 
-.column {
-    margin: 0 0.5rem;
-    flex: 1 1 0px;
-}
-
-.see-more {
-    text-align: right;
-}
-
-.see-more p {
-    margin: 0;
-}
-
-.see-more-link {
-    text-decoration: none;
-    color: #2e2e2e;
-}
-
-    @media screen and (max-width: 500px) {
-        .row {
+        @include mobile {
             flex-direction: column;
             align-items: center;
+        }
+    }
+
+    .column {
+        margin: 0 0.5rem;
+        flex: 1 1 0px;
+    }
+
+    .see-more {
+        text-align: right;
+
+        & p {
+            margin: 0;
+        }
+
+        &-link {
+            text-decoration: none;
+            color: #2e2e2e;
         }
     }
 </style>

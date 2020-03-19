@@ -12,8 +12,8 @@
                 <h2>Популярне:</h2>
 
                 <PublicationsRow
-                    v-bind:publications="popularPublications"
-                    v-bind:rowType="typePopular"
+                        :publications="popularPublications"
+                        :rowType="typePopular"
                 />
 
                 <div class="create">
@@ -46,7 +46,7 @@
 
                     <div class="create">
                         <router-link :to="{name: 'feed', params: {type: 'popular'} }" class="btn-link">
-                             <button class="btn popular-btn">Популярне на editt.</button>
+                            <button class="btn popular-btn">Популярне на editt.</button>
                         </router-link>
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                 <h2>Останні публікації:</h2>
 
                 <PublicationsRow
-                     v-bind:publications="latestPublications"
-                     v-bind:rowType="typeLatest"
+                        :publications="latestPublications"
+                        :rowType="typeLatest"
                 />
 
                 <div class="create">
@@ -96,79 +96,83 @@
 </template>
 
 <script>
-import PublicationsRow from '@/components/PublicationsRow'
+    import PublicationsRow from '@/components/PublicationsRow'
 
-export default {
-    name: 'home',
-    components: {
-        PublicationsRow
-    },
-    data() {
-        return {
-            popularPublications: [],
-            latestPublications: [],
-            typePopular: 'popular',
-            typeLatest: 'latest',
-        }
-    },
-    mounted() {
-        // fetch popular publications
-        fetch('http://localhost:8000/api/publications?type=popular&limit=3')
-        .then(response => response.json())
-        .then(json => this.popularPublications = json.publications)
+    export default {
+        name: 'home',
+        components: {
+            PublicationsRow
+        },
+        data() {
+            return {
+                popularPublications: [],
+                latestPublications: [],
+                typePopular: 'popular',
+                typeLatest: 'latest',
+            }
+        },
+        mounted() {
+            // fetch popular publications
+            fetch('http://localhost:8000/api/publications?type=popular&limit=3')
+                .then(response => response.json())
+                .then(json => this.popularPublications = json.publications)
 
-        // fetch latest publications
-        fetch('http://localhost:8000/api/publications?type=latest&limit=3')
-        .then(response => response.json())
-        .then(json => this.latestPublications = json.publications)
-    },
-}
+            // fetch latest publications
+            fetch('http://localhost:8000/api/publications?type=latest&limit=3')
+                .then(response => response.json())
+                .then(json => this.latestPublications = json.publications)
+        },
+    }
 </script>
 
 <style lang="scss" scoped>
     /* Block 1 */
-    .heading h1 {
-        font-size: 32px;
-        margin: 0;
-    }
+    .heading {
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-    .heading h4 {
-        margin: 10px;
-        color: #9B9B9B;
+        & h1 {
+            font-size: 32px;
+            margin: 0;
+
+            @include mobile {
+                font-size: 32px;
+            }
+        }
+
+        & h4 {
+            margin: 10px;
+            color: #9B9B9B;
+
+            @include mobile {
+                text-align: center;
+                font-size: 12px;
+            }
+        }
     }
 
     .popular {
         text-align: left;
+
+        @include mobile {
+            padding: 1em 0;
+        }
     }
 
     .latest {
         text-align: left;
     }
 
-    @media (max-width: 500px) {
-        .heading {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
 
-        .heading h1 {
-            font-size: 32px;
-        }
-
-        .heading h4 {
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .popular {
-            text-align: left;
-            padding: 1em 0;
-        }
-
-        .column.for-readers, .column.for-creators {
-            width: 100%;
-            border: none;
+    .column {
+        &.for-readers, &.for-creators {
+            @include mobile {
+                width: 100%;
+                border: none;
+            }
         }
     }
 
@@ -209,12 +213,18 @@ export default {
         margin: 5rem 0;
     }
 
-    .block2 .heading{
+    .block2 .heading {
         padding-bottom: 3rem;
     }
 
     .row {
         margin: auto;
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     }
 
     .column {
@@ -223,37 +233,29 @@ export default {
         text-align: center;
     }
 
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
     .for-readers {
         box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
         border-right: 2px solid #707070;
     }
 
     /* List */
-    .benefits{
+    .benefits {
         min-height: 12rem;
     }
 
     .benefits-list {
         text-align: left;
-        list-style:none;
-    }
-
-    .benefits-list li {
-        margin: 0;
-        padding: 14px 0 14px 32px;
         list-style: none;
-        background-image: url('../img/BulletPoint.png');
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: 20px;
+
+        & li {
+            margin: 0;
+            padding: 14px 0 14px 32px;
+            list-style: none;
+            background-image: url('../img/BulletPoint.png');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 20px;
+        }
     }
 
 </style>

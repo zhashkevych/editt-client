@@ -4,14 +4,14 @@
         <router-link :to="{ name: 'publications', params: {id: publication.id } }" class="title-link">
 
             <div class="cropped-image column"
-                v-bind:style="{backgroundImage: 'url(' + publication.imageLink + ')'}"
+                :style="{backgroundImage: 'url(' + publication.imageLink + ')'}"
             />
 
             <div class="column">
                 <p class="hashtags">
                     <span
                         v-for="tag in publication.tags"
-                        v-bind:key="tag"
+                        :key="tag"
                     >#{{tag}} </span>
                 </p>
                 <h2 class="heading">{{publication.title}}</h2>
@@ -41,8 +41,7 @@ export default {
 
 <style lang="scss" scoped>
     .publication {
-        margin: 0 auto;
-        margin-bottom: 3rem;
+        margin: 0 auto 3rem;
     }
 
     .cropped-image {
@@ -63,9 +62,8 @@ export default {
 
     .hashtags {
         font-size: 12px;
-        margin: 1rem 0 0 0;
         text-align: left;
-        margin-left: 1rem;
+        margin: 1rem 0 0 1rem;
     }
 
     .title-link {
