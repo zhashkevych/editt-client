@@ -16,7 +16,7 @@
 
             <img :src="publication.imageLink" class="article-image" alt="">
 
-            <span v-html="publication.body" />
+            <span v-html="publication.body" class="article-body" />
         </div>
     </Wrapper>
 </template>
@@ -53,18 +53,36 @@
         max-width: 60%;
         margin: 0 auto;
         text-align: left;
+
+        @include tablet {
+            max-width: 80%;
+        }
+
+        @include mobile {
+            max-width: 100%;
+        }
     }
 
     .title {
         margin: 0;
     }
 
-    .article-info {
-        color: #9B9B9B;
-        margin: 0 0 1rem 0;
-    }
+    .article {
+        &-info {
+            color: #9B9B9B;
+            margin: 0 0 1rem 0;
+        }
 
-    .article-image {
-        max-width: 100%;
+        &-image {
+            max-width: 100%;
+        }
+
+        &-body {
+            line-height: 1.58;
+
+            &::v-deep p {
+                margin: 20px 0 0 0;
+            }
+        }
     }
 </style>

@@ -41,5 +41,13 @@
         max-width: 60%;
         margin: 0 auto;
         text-align: left;
+
+        @include tablet {
+            max-width: 80%;
+        }
+
+        @include mobile {
+            max-width: 100%;
+        }
     }
 </style>
