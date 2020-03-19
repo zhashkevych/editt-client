@@ -1,5 +1,5 @@
 <template>
-    <h1>404 Not Found</h1>
+    <h1 class="not-found">404 Not Found</h1>
 </template>
 
 <script>
@@ -9,5 +9,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+    .not-found {
+        text-align: center;
+    }
 </style>
