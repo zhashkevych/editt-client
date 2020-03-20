@@ -215,7 +215,7 @@
 
     /* Block 2 */
     .margin-bottom {
-        margin: 5rem 0;
+        margin: 6rem 0;
     }
 
     .block2 .heading {
