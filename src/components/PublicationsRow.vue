@@ -46,8 +46,20 @@
     }
 
     .column {
-        margin: 0 0.5rem;
+        margin: 0 40px 0 0;
         flex: 1 1 0px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include tablet {
+            margin-right: 20px;
+        }
+
+        @include mobile {
+            margin: 0;
+        }
     }
 
     .see-more {

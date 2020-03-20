@@ -10,10 +10,14 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .wrapper {
     max-width: 1400px;
     padding: 0 20px;
     margin: 0 auto;
+
+    @include desktop {
+      max-width: 1000px;
+    }
   }
 </style>
