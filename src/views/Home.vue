@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="column for-creators">
-                        <h1>Для кріейторів</h1>
+                        <h1>Для editt'орів</h1>
 
                         <div class="benefits">
                             <ul class="benefits-list">
