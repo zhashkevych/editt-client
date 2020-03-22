@@ -1,22 +1,20 @@
 <template>
     <Wrapper>
         <div class="feed">
-            <h1 v-if="$route.params.type === 'latest'">Останні публікації:</h1>
-            <h1 v-else>Популярне:</h1>
+            <h1>{{feedText}}</h1>
 
-            <FeedPublication
-                v-for="(publication, index) in publications"
-                :publication="publication"
-                :index="index"
-                :key="publication.id"/>
+            <PublicationsList
+                :publications="publications"
+                :stretch-publication="false"
+            />
         </div>
     </Wrapper>
 </template>
 
 <script>
-    import FeedPublication from '@/components/FeedPublication'
+    import PublicationsList from "@/components/PublicationsList"
     import Wrapper from "@/components/Wrapper"
-    import { api } from "@/utils/api";
+    import { api } from "@/utils/api"
 
     export default {
         data() {
@@ -30,8 +28,14 @@
                 .then(json => this.publications = json.publications)
         },
         components: {
-            FeedPublication,
-            Wrapper
+            Wrapper,
+            PublicationsList,
+        },
+        computed: {
+            feedText() {
+                if (this.$route.params.type === 'latest') return "Останні публікації:";
+                return "Популярне:";
+            }
         }
     }
 </script>

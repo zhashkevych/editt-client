@@ -1,7 +1,7 @@
 <template>
     <div class="publication">
 
-        <router-link :to="{ name: 'publications', params: {id: publication.id } }" class="title-link">
+        <router-link :to="{ name: 'publications', params: { id: publication.id } }" class="title-link">
 
             <div class="cropped-image"
                  :style="{backgroundImage: `url(${publication.imageLink})`}"
@@ -120,10 +120,6 @@
     }
 
     @media screen and (max-width: 500px) {
-
-
-
-
 
 
     }

@@ -12,10 +12,12 @@
                 <div class="popular">
                     <h2>Популярне:</h2>
 
-                    <PublicationsRow
+                    <PublicationsList
                         :publications="popularPublications"
-                        :rowType="typePopular"
+                        :desktop-row="true"
                     />
+
+                    <SeeMoreLink :to="{name: 'feed', params: {type: 'popular'} }" />
 
                     <div class="create">
                         <router-link :to="'create'" class="btn-link">
@@ -80,10 +82,12 @@
                 <div class="latest">
                     <h2>Останні публікації:</h2>
 
-                    <PublicationsRow
+                    <PublicationsList
                         :publications="latestPublications"
-                        :rowType="typeLatest"
+                        :desktop-row="true"
                     />
+
+                    <SeeMoreLink :to="{name: 'feed', params: {type: 'latest'} }" />
 
                     <div class="create">
                         <router-link :to="'create'" class="btn-link">
@@ -98,15 +102,18 @@
 </template>
 
 <script>
-    import PublicationsRow from '@/components/PublicationsRow'
+    import PublicationsList from '@/components/PublicationsList'
     import Wrapper from "@/components/Wrapper"
     import { api } from "@/utils/api"
+    import SeeMoreLink from "../components/SeeMoreLink"
+
 
     export default {
         name: 'home',
         components: {
-            PublicationsRow,
-            Wrapper
+            PublicationsList,
+            Wrapper,
+            SeeMoreLink
         },
         data() {
             return {
