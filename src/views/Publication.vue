@@ -35,15 +35,9 @@
             Wrapper
         },
         mounted() {
-            // fetch publication by id
             api(`publications/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => this.publication = json);
-
-            // and increase view count
-            api(`publications/${this.$route.params.id}/view`, {
-                method: 'POST',
-            }).then(console.log('view count increased'))
         }
     }
 </script>
