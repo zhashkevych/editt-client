@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 #app {

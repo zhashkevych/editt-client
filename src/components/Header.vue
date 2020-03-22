@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .noselect {
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */

@@ -34,7 +34,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .row {
         margin: auto;
         display: flex;
