@@ -36,14 +36,14 @@
 <style lang="scss" scoped>
     .footer {
         box-sizing: border-box;
-        width: 100%;
+        width: calc(100vw - 200px);
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid #b7b7b7;
-        padding: 20px 100px;
+        padding: 20px 0;
         background: #ffffff;
-        margin-top: auto;
+        margin: auto auto 0;
 
         @include tablet {
             flex-direction: column;
