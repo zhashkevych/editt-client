@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
   .wrapper {
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     max-width: 1000px;
   }
 </style>

@@ -44,7 +44,6 @@
 
 <style lang="scss" scoped>
     .publication {
-        max-width: 60%;
         margin: 0 auto;
         text-align: left;
 

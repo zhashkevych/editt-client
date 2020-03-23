@@ -35,13 +35,15 @@
 
 <style lang="scss" scoped>
     .footer {
+        box-sizing: border-box;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid #b7b7b7;
-        padding: 20px 0;
-        margin-top: 2rem;
+        padding: 20px 100px;
+        background: #ffffff;
+        margin-top: auto;
 
         @include tablet {
             flex-direction: column;
@@ -61,9 +63,7 @@
     }
 
     .logo {
-        @include tablet {
-            padding-left: 0;
-        }
+        padding-left: 0;
     }
 
     .copyright {

@@ -19,6 +19,10 @@ export default {
 }
 </script>
 
+<style lang="sass">
+  @import "./styles"
+</style>
+
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
@@ -28,5 +32,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2e2e2e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

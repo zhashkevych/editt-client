@@ -5,7 +5,8 @@
 </template>
 
 <script>
-    export default {name: "Logo"
+    export default {
+        name: "Logo"
     }
 </script>
 
@@ -13,7 +14,7 @@
     .logo {
         font-size: 48px;
         font-weight: bold;
-        padding-left: 2em;
+        padding-left: 100px;
         margin: 0;
         user-select: none;
 

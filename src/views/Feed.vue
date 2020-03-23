@@ -42,7 +42,6 @@
 
 <style lang="scss" scoped>
     .feed {
-        max-width: 60%;
         margin: 0 auto;
         text-align: left;
 

@@ -20,6 +20,7 @@
         overflow: hidden;
         text-align: left;
         padding: 30px 0;
+        width: 100%;
 
         @include mobile {
             text-align: center;
