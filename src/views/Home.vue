@@ -65,7 +65,9 @@
                         </div>
 
                         <div class="create">
-                            <button class="btn">Створити публікацію</button>
+                             <router-link :to="'create'" class="btn-link">
+                                <button class="btn">Створити публікацію</button>
+                            </router-link>
                         </div>
                     </div>
                 </div>
