@@ -80,3 +80,11 @@
         }
     }
 </style>
+
+<style lang="scss">
+   .article-body {
+        & img {
+            max-width: 100%;
+        }
+    }
+</style>
