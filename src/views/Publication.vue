@@ -17,12 +17,18 @@
             <img :src="publication.imageLink" class="article-image" alt="">
 
             <span v-html="publication.body" class="article-body" />
+
+            <PublicationFooter 
+                :reactions="publication.reactions"
+            />
+
         </div>
     </Wrapper>
 </template>
 
 <script>
     import Wrapper from "@/components/Wrapper"
+    import PublicationFooter from "@/components/PublicationFooter"
     import { api } from "@/utils/api"
 
     export default {
@@ -32,7 +38,8 @@
             }
         },
         components: {
-            Wrapper
+            Wrapper,
+            PublicationFooter
         },
         mounted() {
             api(`publications/${this.$route.params.id}`)
