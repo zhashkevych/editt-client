@@ -15,7 +15,12 @@ export default {
   components: {
     Header,
     Footer
-  }
+  },
+  watch: {
+    '$route' (to) {
+      document.title = to.meta.title || 'editt'
+    }
+  },
 }
 </script>
 
