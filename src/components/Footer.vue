@@ -8,12 +8,12 @@
             <span class="proposal">Маєш питання чи пропозиції? Пиши нам:</span>
             <ul class="socials">
                 <li class="socials-item">
-                    <a href="#" class="socials-link">
+                    <a href="https://t.me/zhashkevych" class="socials-link" target="_blank">
                         <img class="socials-icon" src="../assets/icons/telegram.png" alt="Telegram" />
                     </a>
                 </li>
                 <li class="socials-item">
-                    <a href="#" class="socials-link">
+                    <a href="https://www.instagram.com/editt.network/" class="socials-link" target="_blank">
                         <img class="socials-icon" src="../assets/icons/instagram.png" alt="Instagram" />
                     </a>
                 </li>
