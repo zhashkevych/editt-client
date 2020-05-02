@@ -1,58 +1,66 @@
 <template>
-    <footer class="footer">
-        <div class="credentials">
-            <Logo class="logo" />
-            <small class="copyright">&copy; 2020</small>
+    <footer class="publication-footer">
+        <div class="reaction">
+            <ReactionButton 
+                class="button"
+                :reactions="reactions"
+            />
         </div>
-        <div class="feedback">
-            <span class="proposal">Маєш питання чи пропозиції? Пиши нам:</span>
+        
+        <!-- Share buttons won't be used for MVP -->
+
+        <!-- <div class="share">
             <ul class="socials">
                 <li class="socials-item">
                     <a href="https://t.me/zhashkevych" class="socials-link" target="_blank">
-                        <img class="socials-icon" src="../assets/icons/telegram.png" alt="Telegram" />
+                        <img class="socials-icon" src="../assets/icons/linkedin.png" alt="LinkedIn" />
+                    </a>
+                </li>
+                <li class="socials-item">
+                    <a :href="'https://www.facebook.com/sharer/sharer.php?u' + publication_link" class="socials-link" target="_blank">
+                        <img class="socials-icon" src="../assets/icons/facebook.png" alt="Facebook" />
                     </a>
                 </li>
                 <li class="socials-item">
                     <a href="https://www.instagram.com/editt.network/" class="socials-link" target="_blank">
-                        <img class="socials-icon" src="../assets/icons/instagram.png" alt="Instagram" />
+                        <img class="socials-icon" src="../assets/icons/twitter.png" alt="Twitter" />
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </footer>
 </template>
 
 <script>
-    import Logo from "@/components/Logo"
+   import ReactionButton from "@/components/ReactionButton"
 
     export default {
-        name: "Footer",
+        name: "PublicationFooter",
+        props: ["reactions"],
         components: {
-            Logo
-        }
+            ReactionButton
+        },
     }
 </script>
 
-<style lang="scss" scoped>
-    .footer {
+<style scoped lang="scss">
+  .publication-footer {
         box-sizing: border-box;
-        width: calc(100vw - 200px);
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-top: 1px solid #b7b7b7;
+        // border-top: 1px solid #b7b7b7;
         padding: 20px 0;
         background: #ffffff;
         margin: auto auto 0;
 
         @include tablet {
             flex-direction: column;
-            box-sizing: border-box;
-            width: 100%;
         }
     }
 
-    .credentials {
+    .reaction {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
@@ -64,7 +72,7 @@
         }
     }
 
-    .logo {
+    .button {
         padding-left: 0;
     }
 
@@ -86,7 +94,7 @@
         }
     }
 
-    .feedback {
+    .share {
         display: flex;
         justify-content: space-between;
         align-items: center;
