@@ -25,6 +25,8 @@ export default {
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import "../node_modules/medium-editor/dist/css/medium-editor.min.css";
+@import "../node_modules/medium-editor/dist/css/themes/default.min.css";
 
 #app {
   font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;

@@ -47,6 +47,8 @@
 
         @include tablet {
             flex-direction: column;
+            box-sizing: border-box;
+            width: 100%;
         }
     }
 
