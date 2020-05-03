@@ -68,6 +68,7 @@ export default {
         margin: 0;
         margin-right: 10px;
         transition: 0.3s;
+        cursor: pointer;
 
         &:active {
             transform: scale(1.1);
