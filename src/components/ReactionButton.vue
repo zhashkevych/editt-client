@@ -17,7 +17,7 @@
             {{ reactionsSum }} Реакцій
         </p>
         <p class="reaction-count" v-else>
-            Оціни цей editt першим! {{ reactionsSum }}
+            Оціни цей editt першим! 
         </p>
     </div>
 </template>
