@@ -57,7 +57,11 @@
 
         @include mobile {
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+
+            .publication {
+              margin-bottom: 10px;
+            }
         }
     }
 
@@ -66,23 +70,32 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 600px;
 
         .publication {
             margin: 0 auto 3rem;
+            width: 100%;
 
             @include mobile {
-                margin-bottom: 0;
+                margin-bottom: 10px;
             }
         }
 
         &::v-deep .title-link {
             display: flex;
             align-items: flex-start;
-            flex: 1 1 0px;
 
             .cropped-image {
                 margin-right: 1rem;
+                min-width: 170px;
+                max-width: 170px;
+                box-sizing: border-box;
+                @include mobile {
+                    max-width: 100px;
+                    min-width: 100px;
+                }
             }
+
         }
     }
 
