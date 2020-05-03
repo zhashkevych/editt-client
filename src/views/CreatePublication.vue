@@ -9,6 +9,7 @@
                 :tags="tags"
                 @tags-changed="onHashEnter"
                 placeholder="Додати тег"
+                :max-tags="3"
             />
             <medium-editor
                 class="editt-editor title"
@@ -27,7 +28,14 @@
                 Додати прев'ю
                 <input type="file" accept="image/*" @change="onImageChange" />
             </label>
-            <img :src="imageLink" class="article-image" alt v-else />
+            <img
+                :src="imageLink"
+                @click="clearImage"
+                class="article-image"
+                alt="Preview"
+                title="Натисніть аби видалити прев'ю"
+                v-else
+            />
             <medium-editor
                 class="editt-editor article-body"
                 :text="body"
@@ -61,11 +69,13 @@ export default {
             body: "",
             options: {
                 title: {
+                    toolbar: false,
                     placeholder: {
                         text: "Назва"
                     }
                 },
                 author: {
+                    toolbar: false,
                     placeholder: {
                         text: "Твоє ім'я"
                     }
@@ -93,7 +103,7 @@ export default {
             localStorage.setItem("story", JSON.stringify({}));
         },
         stripTags(str) {
-          return str.replace(/<\/?[^>]+(>|$)/g, "")
+            return str.replace(/<\/?[^>]+(>|$)/g, "");
         },
         onHashEnter(tags) {
             this.tags = tags;
@@ -120,6 +130,10 @@ export default {
                 console.error(e);
             }
         },
+        clearImage() {
+            this.imageLink = "";
+            this.saveToStorage();
+        },
         async createPublication() {
             const postData = {
                 title: this.stripTags(this.title),
@@ -139,7 +153,7 @@ export default {
                 });
                 const { id } = await res.json();
                 this.clearStorage();
-                this.$router.push(`/publications/${id}`)
+                this.$router.push(`/publications/${id}`);
             } catch (e) {
                 console.error(e);
             }
@@ -195,6 +209,13 @@ export default {
         padding: 0 12px;
         margin-right: 5px;
         transition: all 0.3s;
+        color: #9b9b9b;
+        min-width: 110px;
+        text-align: right;
+
+        @include tablet {
+            opacity: 0;
+        }
     }
 
     &.medium-editor-placeholder {
@@ -216,14 +237,24 @@ export default {
 
     &-image {
         max-width: 100%;
+        max-height: 100vh;
     }
 
     &-body {
         line-height: 1.58;
         margin-top: 20px;
 
-        &::v-deep p {
-            margin: 20px 0 0 0;
+        &::v-deep {
+            p {
+                margin: 20px 0 0 0;
+            }
+
+            blockquote {
+                color: rgba(0, 0, 0, 0.6);
+                text-align: center;
+                font-style: italic;
+                font-size: 20px;
+            }
         }
     }
 }
@@ -233,19 +264,24 @@ export default {
 }
 
 .preview {
+    background: #65587f;
+    padding: 5px 10px;
+    color: white;
+    font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 14px;
     & input {
         display: none;
     }
 }
 
 .publish {
-  background: #65587f;    
-  border: none;
-  padding: 5px 10px;
-  color: white;
-  font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  margin-bottom: 10px;
+    background: #65587f;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .vue-tags-input {
@@ -264,11 +300,17 @@ export default {
             background-color: transparent;
             color: #000;
             border: 1px solid rgba(0, 0, 0, 0.2);
+            font-size: 16px;
         }
 
         input {
             font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
             color: #2e2e2e;
+            font-size: 16px;
+        }
+
+        .ti-icon-close {
+            color: #9b9b9b;
         }
     }
 }
